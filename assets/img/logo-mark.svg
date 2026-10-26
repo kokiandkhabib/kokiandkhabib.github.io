@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="t">
+  <title id="t">Koki &amp; Khabib Animal Aid — a dog and a cat forming a heart</title>
+  <!-- Heart body: left lobe = Koki (dog), right lobe = Khabib (cat) -->
+  <path d="M120 214 C 92 190, 34 150, 30 104 C 26 66, 52 44, 80 44 C 98 44, 112 54, 120 68 C 128 54, 142 44, 160 44 C 188 44, 214 66, 210 104 C 206 150, 148 190, 120 214 Z" fill="#0F5C5A"/>
+  <!-- Khabib's pointy cat ear (right, top) -->
+  <path d="M168 47 L 196 18 L 205 74 Z" fill="#0F5C5A" stroke="#0F5C5A" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M176 49 L 193 31 L 198 63 Z" fill="#E0A526"/>
+  <!-- Koki's floppy dog ear (left, hanging) -->
+  <path d="M70 47 C 48 38, 24 50, 19 82 C 16 102, 20 124, 33 130 C 45 135, 51 118, 52 102 C 53 86, 58 72, 70 60 Z" fill="#E0A526"/>
+  <!-- Koki's face -->
+  <circle cx="70" cy="96" r="7.5" fill="#FBF8F2"/>
+  <circle cx="98" cy="96" r="7.5" fill="#FBF8F2"/>
+  <ellipse cx="84" cy="116" rx="10" ry="7" fill="#FBF8F2"/>
+  <path d="M84 123 Q 84 132 76 134 M84 123 Q 84 132 92 134" fill="none" stroke="#FBF8F2" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Khabib's face -->
+  <path d="M134 97 Q 142 88 150 97 Q 142 103 134 97 Z" fill="#FBF8F2"/>
+  <path d="M164 97 Q 172 88 180 97 Q 172 103 164 97 Z" fill="#FBF8F2"/>
+  <path d="M151 112 L 163 112 L 157 119 Z" fill="#E0A526"/>
+  <path d="M157 119 Q 157 126 150 128 M157 119 Q 157 126 164 128" fill="none" stroke="#FBF8F2" stroke-width="3" stroke-linecap="round"/>
+  <path d="M128 114 L 143 117 M127 123 L 142 121 M186 114 L 171 117 M187 123 L 172 121" stroke="#FBF8F2" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
