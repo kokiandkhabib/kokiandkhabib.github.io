@@ -1,4 +1,4 @@
-/* Koki & Khabib Animal Aid — core site script: language, menu, API client, small helpers. */
+/* Koki & Khabib Animal Aid: core site script (language, menu, API client, small helpers). */
 (function () {
   'use strict';
   var KK = (window.KK = window.KK || {});
@@ -85,7 +85,7 @@
 
   KK.errorText = function (code) {
     var m = {
-      offline: { en: "We couldn't reach our server. Your answers are saved on this phone — please try again in a few minutes.", hi: 'हमारे सर्वर से संपर्क नहीं हो पाया। आपके जवाब इस फ़ोन पर सुरक्षित हैं — कृपया कुछ मिनट बाद फिर कोशिश करें।' },
+      offline: { en: "We couldn't reach our server. Your answers are saved on this phone. Please try again in a few minutes.", hi: 'हमारे सर्वर से संपर्क नहीं हो पाया। आपके जवाब इस फ़ोन पर सुरक्षित हैं। कृपया कुछ मिनट बाद फिर कोशिश करें।' },
       busy: { en: 'We are receiving many requests right now. Please try again in an hour.', hi: 'अभी बहुत सारे अनुरोध आ रहे हैं। कृपया एक घंटे बाद फिर कोशिश करें।' },
       rate_phone: { en: 'This phone number has sent several requests today. Please try again tomorrow, or message us on Instagram.', hi: 'इस फ़ोन नंबर से आज कई अनुरोध आ चुके हैं। कृपया कल फिर कोशिश करें, या Instagram पर संदेश भेजें।' },
       too_fast: { en: 'That was very quick! Please check your answers and press submit again.', hi: 'यह बहुत जल्दी हो गया! कृपया अपने जवाब जाँचें और फिर से सबमिट करें।' },
@@ -119,7 +119,7 @@
     if (document.querySelector('[data-status]')) KK.paintStatus();
     if (KK.testKey) {
       var b = document.createElement('div');
-      b.textContent = 'TEST MODE — submissions are tagged as tests';
+      b.textContent = 'TEST MODE: submissions are tagged as tests';
       b.style.cssText = 'position:fixed;bottom:0;left:0;right:0;background:#b42318;color:#fff;text-align:center;font:600 13px sans-serif;padding:4px;z-index:99';
       document.body.appendChild(b);
     }
@@ -132,7 +132,7 @@
     return KK.config().then(function (c) {
       var map = {
         open: { en: 'Applications open', hi: 'आवेदन खुले हैं' },
-        limited: { en: 'Applications open — limited funds this month', hi: 'आवेदन खुले हैं — इस महीने सीमित राशि' },
+        limited: { en: 'Applications open, limited funds this month', hi: 'आवेदन खुले हैं, इस महीने सीमित राशि' },
         paused: { en: 'New applications paused', hi: 'नए आवेदन अभी रुके हैं' },
       };
       els.forEach(function (el) {

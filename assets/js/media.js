@@ -1,4 +1,4 @@
-/* Koki & Khabib Animal Aid — in-browser file preparation: compress photos, fingerprint files, read camera date. */
+/* Koki & Khabib Animal Aid: in-browser file preparation (compress photos, fingerprint files, read camera date). */
 (function () {
   'use strict';
   var KK = (window.KK = window.KK || {});
@@ -73,7 +73,7 @@
     });
   }
 
-  /** 64-bit difference hash (9×8 greyscale) as 16 hex chars — survives resizing and recompression. */
+  /** 64-bit difference hash (9×8 greyscale) as 16 hex chars; it survives resizing and recompression. */
   function dhash(img) {
     var c = document.createElement('canvas'); c.width = 9; c.height = 8;
     var x = c.getContext('2d', { willReadFrequently: true });

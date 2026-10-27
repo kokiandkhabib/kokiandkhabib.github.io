@@ -1,4 +1,4 @@
-/* Koki & Khabib Animal Aid — professional research survey (vets, rescuers, feeders, fosters, NGOs). About 6 minutes. */
+/* Koki & Khabib Animal Aid: professional research survey (vets, rescuers, feeders, fosters, NGOs). About 6 minutes. */
 (function () {
   'use strict';
   var KK = window.KK;
@@ -52,7 +52,7 @@
     },
     {
       key: 'costs', title: { en: 'Typical costs in Mumbai', hi: 'मुंबई में आम खर्च' },
-      intro: { en: 'Rough ranges are perfect — we use them to spot unusual estimates.', hi: 'मोटा-मोटा अंदाज़ा काफ़ी है — इससे हम असामान्य एस्टिमेट पहचान पाते हैं।' },
+      intro: { en: 'Rough ranges are perfect. We use them to spot unusual estimates.', hi: 'मोटा-मोटा अंदाज़ा काफ़ी है। इससे हम असामान्य एस्टिमेट पहचान पाते हैं।' },
       fields: [
         band('CostConsult', 'Vet consultation (private clinic)', 'डॉक्टर की फ़ीस (प्राइवेट क्लिनिक)', [['lt300', 'Under ₹300', '₹300 से कम'], ['300-600', '₹300–600'], ['600-1000', '₹600–1,000'], ['1000-2000', '₹1,000–2,000'], ['gt2000', 'Above ₹2,000', '₹2,000 से ज़्यादा']], function (d) { return !!d.Role; }),
         band('CostMeds', 'Medicines for a one-week course', 'एक हफ़्ते की दवाइयाँ', [['lt300', 'Under ₹300', '₹300 से कम'], ['300-700', '₹300–700'], ['700-1500', '₹700–1,500'], ['1500-3000', '₹1,500–3,000'], ['gt3000', 'Above ₹3,000', '₹3,000 से ज़्यादा']]),

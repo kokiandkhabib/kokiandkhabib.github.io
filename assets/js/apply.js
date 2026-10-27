@@ -1,4 +1,4 @@
-/* Koki & Khabib Animal Aid — application form (standard lane). */
+/* Koki & Khabib Animal Aid: application form (standard lane). */
 (function () {
   'use strict';
   var KK = window.KK;
@@ -24,7 +24,7 @@
         { name: 'phone', type: 'tel', required: true, prefix: '+91', autocomplete: 'tel-national', maxlength: 15, label: { en: 'Mobile number (WhatsApp if possible)', hi: 'मोबाइल नंबर (हो सके तो WhatsApp वाला)' },
           help: { en: 'We will only contact you about this request.', hi: 'हम आपसे केवल इसी अनुरोध के बारे में संपर्क करेंगे।' } },
         { name: 'instagram', type: 'text', maxlength: 120, label: { en: 'Instagram handle, or another way people know you', hi: 'Instagram हैंडल, या लोग आपको और कैसे जानते हैं' },
-          help: { en: 'Helps us verify — e.g. @yourname, or the rescue group you work with.', hi: 'जाँच में मदद करता है — जैसे @yourname, या जिस रेस्क्यू ग्रुप के साथ आप काम करते हैं।' } },
+          help: { en: 'Helps us verify, e.g. @yourname, or the rescue group you work with.', hi: 'जाँच में मदद करता है, जैसे @yourname, या जिस रेस्क्यू ग्रुप के साथ आप काम करते हैं।' } },
         { name: 'email', type: 'email', maxlength: 120, autocomplete: 'email', label: { en: 'Email', hi: 'ईमेल' } },
         { name: 'partnerCode', type: 'text', maxlength: 12, placeholder: { en: 'KKP-01', hi: 'KKP-01' }, label: { en: 'Partner code (if a vet or rescuer gave you one)', hi: 'पार्टनर कोड (अगर किसी डॉक्टर या रेस्क्यूअर ने दिया हो)' },
           validate: function (v) { return /^KKP-\d{2,3}$/i.test(String(v).trim()) ? null : { en: 'Partner codes look like KKP-01.', hi: 'पार्टनर कोड ऐसा दिखता है: KKP-01' }; } },
@@ -44,14 +44,14 @@
           { value: 'other', icon: '➕', label: { en: 'Other', hi: 'अन्य' } }] },
         { name: 'speciesOther', type: 'text', required: true, maxlength: 60, show: function (d) { return d.species === 'other'; }, label: { en: 'Which animal?', hi: 'कौन-सा जानवर?' } },
         { name: 'animalStatus', type: 'radio', required: true, label: { en: 'Who does the animal belong to?', hi: 'यह जानवर किसका है?' }, options: [
-          { value: 'stray', label: { en: 'Stray — no one looks after it', hi: 'आवारा — कोई देखभाल नहीं करता' } },
-          { value: 'community', label: { en: 'Community animal — people in the area feed or care for it', hi: 'सामुदायिक जानवर — इलाके के लोग खिलाते या देखभाल करते हैं' } },
+          { value: 'stray', label: { en: 'Stray: no one looks after it', hi: 'आवारा: कोई देखभाल नहीं करता' } },
+          { value: 'community', label: { en: 'Community animal: people in the area feed or care for it', hi: 'सामुदायिक जानवर: इलाके के लोग खिलाते या देखभाल करते हैं' } },
           { value: 'abandoned', label: { en: 'Abandoned pet', hi: 'छोड़ा गया पालतू' } },
-          { value: 'injured_unknown', label: { en: 'Injured — not sure', hi: 'घायल — पता नहीं' } },
+          { value: 'injured_unknown', label: { en: 'Injured, not sure', hi: 'घायल, पता नहीं' } },
           { value: 'owned', label: { en: 'It has an owner (a pet)', hi: 'इसका मालिक है (पालतू)' } }] },
         { name: 'ownedNote', type: 'note', tone: '', show: function (d) { return d.animalStatus === 'owned'; },
-          html: { en: 'We mostly help animals without owners. For pets we can only consider real financial hardship — and cosmetic or elective procedures are never funded.',
-            hi: 'हम ज़्यादातर बिना मालिक वाले जानवरों की मदद करते हैं। पालतू जानवरों के लिए हम केवल असली आर्थिक कठिनाई में ही विचार कर सकते हैं — और कॉस्मेटिक या ग़ैर-ज़रूरी प्रक्रियाओं का खर्च कभी नहीं उठाते।' } },
+          html: { en: 'We mostly help animals without owners. For pets we can only consider real financial hardship, and cosmetic or elective procedures are never funded.',
+            hi: 'हम ज़्यादातर बिना मालिक वाले जानवरों की मदद करते हैं। पालतू जानवरों के लिए हम केवल असली आर्थिक कठिनाई में ही विचार कर सकते हैं, और कॉस्मेटिक या ग़ैर-ज़रूरी प्रक्रियाओं का खर्च कभी नहीं उठाते।' } },
         { name: 'ownedHardship', type: 'textarea', required: true, minLength: 20, maxlength: 1500, show: function (d) { return d.animalStatus === 'owned'; },
           label: { en: 'Please explain the financial hardship', hi: 'कृपया आर्थिक कठिनाई के बारे में बताएँ' } },
         { name: 'area', type: 'text', required: true, minLength: 2, maxlength: 120, label: { en: 'Where in Mumbai is the animal?', hi: 'जानवर मुंबई में कहाँ है?' },
@@ -92,8 +92,8 @@
             { value: 'vomiting', label: { en: 'Vomiting / diarrhoea', hi: 'उल्टी / दस्त' } }, { value: 'other', label: { en: 'Other', hi: 'अन्य' } }] },
         { name: 'urgentNote', type: 'note', tone: 'red',
           show: function (d) { return (d.conditions || []).some(function (c) { return CRITICAL.indexOf(c) >= 0; }); },
-          html: { en: '<b>This sounds urgent.</b> If the animal is not with a vet yet, please take it to one now — see the <a href="emergency.html">emergency page</a> for 24-hour options and our fast-track form.',
-            hi: '<b>यह गंभीर लगता है।</b> अगर जानवर अभी तक डॉक्टर के पास नहीं है, तो कृपया उसे अभी ले जाएँ — 24 घंटे वाले विकल्पों और जल्दी मदद वाले फ़ॉर्म के लिए <a href="emergency.html">आपातकालीन पेज</a> देखें।' } },
+          html: { en: "<b>This sounds urgent.</b> If the animal is not with a vet yet, please take it to one now. We review requests every evening, so we can't promise an immediate reply.",
+            hi: '<b>यह गंभीर लगता है।</b> अगर जानवर अभी तक डॉक्टर के पास नहीं है, तो कृपया उसे अभी ले जाएँ। हम हर शाम अनुरोधों की समीक्षा करते हैं, इसलिए तुरंत जवाब का वादा नहीं कर सकते।' } },
         { name: 'animalDesc', type: 'textarea', required: true, minLength: 10, maxlength: 2000, label: { en: 'Describe the animal and its condition', hi: 'जानवर और उसकी हालत के बारे में बताएँ' },
           help: { en: 'What happened, since when, and how it is now.', hi: 'क्या हुआ, कब से, और अभी कैसी हालत है।' } },
         { name: 'assistanceDesc', type: 'textarea', required: true, minLength: 5, maxlength: 2000, label: { en: 'What exactly will the money pay for?', hi: 'पैसे से ठीक-ठीक क्या खर्च होगा?' },
@@ -102,7 +102,7 @@
           label: { en: 'Food or medicine details (what, how much, for how long)', hi: 'खाने या दवा की जानकारी (क्या, कितना, कितने दिन)' } },
         { name: 'prevTreatment', type: 'textarea', maxlength: 1500, label: { en: 'Treatment or help given so far', hi: 'अब तक क्या इलाज या मदद हुई है' } },
         { name: 'urgency', type: 'radio', required: true, cols: 2, label: { en: 'How soon is the money needed?', hi: 'पैसे कितनी जल्दी चाहिए?' }, options: [
-          { value: 'today', label: { en: 'Today — it cannot wait', hi: 'आज ही — रुक नहीं सकते' } }, { value: 'three_days', label: { en: 'Within 3 days', hi: '3 दिन के अंदर' } },
+          { value: 'today', label: { en: 'Today, it cannot wait', hi: 'आज ही, रुक नहीं सकते' } }, { value: 'three_days', label: { en: 'Within 3 days', hi: '3 दिन के अंदर' } },
           { value: 'two_weeks', label: { en: 'Within 2 weeks', hi: '2 हफ़्ते के अंदर' } }, { value: 'routine', label: { en: 'No fixed date', hi: 'कोई तय तारीख़ नहीं' } }] },
       ],
     },
@@ -110,7 +110,7 @@
       key: 'money', title: { en: 'The money', hi: 'पैसों की जानकारी' },
       fields: [
         { name: 'amount', type: 'number', required: true, min: 1, max: 500000, prefix: '₹', maxlength: 7, label: { en: 'How much do you need from us?', hi: 'आपको हमसे कितनी राशि चाहिए?' },
-          help: { en: 'Only the shortfall — the part you cannot cover yourself.', hi: 'केवल कमी वाली राशि — वह हिस्सा जो आप खुद नहीं दे पा रहे।' } },
+          help: { en: 'Only the shortfall: the part you cannot cover yourself.', hi: 'केवल कमी वाली राशि: वह हिस्सा जो आप खुद नहीं दे पा रहे।' } },
         { name: 'shortfallReason', type: 'textarea', required: true, minLength: 5, maxlength: 1500, label: { en: "Why can't you cover this yourself?", hi: 'आप यह खर्च खुद क्यों नहीं उठा पा रहे हैं?' } },
         { name: 'ifNotFunded', type: 'radio', required: true, label: { en: 'What happens if this is not funded?', hi: 'अगर यह मदद नहीं मिली तो क्या होगा?' }, options: [
           { value: 'cannot_start', label: { en: 'Treatment or care cannot start', hi: 'इलाज या देखभाल शुरू नहीं हो पाएगी' } },
@@ -132,21 +132,21 @@
       intro: { en: 'We prefer to pay the vet, pharmacy or supplier <b>directly</b>. It keeps things simple and safe for everyone.', hi: 'हम डॉक्टर, फ़ार्मेसी या सप्लायर को <b>सीधे</b> भुगतान करना पसंद करते हैं। इससे सबके लिए काम आसान और सुरक्षित रहता है।' },
       fields: [
         { name: 'clinicInvolved', type: 'radio', required: true, label: { en: 'Is a vet or clinic involved?', hi: 'क्या कोई डॉक्टर या क्लिनिक जुड़ा है?' }, options: [
-          { value: 'yes', label: { en: 'Yes', hi: 'हाँ' } }, { value: 'not_yet', label: { en: 'Not yet — the animal still needs to be taken', hi: 'अभी नहीं — जानवर को ले जाना बाकी है' } },
+          { value: 'yes', label: { en: 'Yes', hi: 'हाँ' } }, { value: 'not_yet', label: { en: 'Not yet, the animal still needs to be taken', hi: 'अभी नहीं, जानवर को ले जाना बाकी है' } },
           { value: 'no', label: { en: 'No vet needed (food / transport)', hi: 'डॉक्टर की ज़रूरत नहीं (खाना / किराया)' } }] },
         { name: 'clinicName', type: 'text', maxlength: 120, show: function (d) { return d.clinicInvolved === 'yes' || d.payeeType === 'clinic'; },
           required: function (d) { return d.payeeType === 'clinic' || Number(d.amount) > 3000; }, label: { en: 'Clinic or vet name', hi: 'क्लिनिक या डॉक्टर का नाम' } },
         { name: 'clinicPhone', type: 'text', inputmode: 'tel', maxlength: 16, show: function (d) { return d.clinicInvolved === 'yes' || d.payeeType === 'clinic'; },
           required: function (d) { return Number(d.amount) > 3000; }, validate: clinicDigits, label: { en: 'Clinic phone number', hi: 'क्लिनिक का फ़ोन नंबर' },
-          help: { en: 'For larger amounts we call the clinic to confirm — this is routine.', hi: 'बड़ी राशि के लिए हम पुष्टि के लिए क्लिनिक को फ़ोन करते हैं — यह सामान्य प्रक्रिया है।' } },
+          help: { en: 'For larger amounts we call the clinic to confirm. This is routine.', hi: 'बड़ी राशि के लिए हम पुष्टि के लिए क्लिनिक को फ़ोन करते हैं। यह सामान्य प्रक्रिया है।' } },
         { name: 'clinicArea', type: 'text', maxlength: 120, show: function (d) { return d.clinicInvolved === 'yes' || d.payeeType === 'clinic'; }, label: { en: 'Clinic area', hi: 'क्लिनिक का इलाका' } },
         { name: 'payeeType', type: 'radio', required: true, label: { en: 'Who should we pay?', hi: 'हम किसे भुगतान करें?' }, options: [
           { value: 'clinic', label: { en: 'The clinic or hospital', hi: 'क्लिनिक या अस्पताल' }, desc: { en: 'Recommended', hi: 'सबसे अच्छा' } },
           { value: 'pharmacy', label: { en: 'A pharmacy / medical store', hi: 'फ़ार्मेसी / मेडिकल स्टोर' } },
           { value: 'supplier', label: { en: 'A food or supply shop', hi: 'खाने या सामान की दुकान' } },
           { value: 'transport', label: { en: 'Ambulance or transport provider', hi: 'एम्बुलेंस या गाड़ी वाला' } },
-          { value: 'self', label: { en: 'Me — I already paid (reimbursement)', hi: 'मुझे — मैंने पहले ही भुगतान कर दिया है (वापसी)' }, desc: { en: 'Bills and proof of payment needed', hi: 'बिल और भुगतान का सबूत ज़रूरी' } },
-          { value: 'self_advance', label: { en: "Me — I'll buy it and share the bills", hi: 'मुझे — मैं खरीदकर बिल भेजूँगा/भेजूँगी' }, desc: { en: 'Small amounts only (up to ₹500)', hi: 'केवल छोटी राशि (₹500 तक)' } },
+          { value: 'self', label: { en: 'Me: I already paid (reimbursement)', hi: 'मुझे: मैंने पहले ही भुगतान कर दिया है (वापसी)' }, desc: { en: 'Bills and proof of payment needed', hi: 'बिल और भुगतान का सबूत ज़रूरी' } },
+          { value: 'self_advance', label: { en: "Me: I'll buy it and share the bills", hi: 'मुझे: मैं खरीदकर बिल भेजूँगा/भेजूँगी' }, desc: { en: 'Small amounts only (up to ₹500)', hi: 'केवल छोटी राशि (₹500 तक)' } },
           { value: 'other', label: { en: 'Someone else', hi: 'किसी और को' } }] },
         { name: 'payeeName', type: 'text', maxlength: 80, required: function (d) { return d.payeeType && d.payeeType !== 'clinic'; },
           show: function (d) { return !!d.payeeType; }, label: { en: 'Name of the person or business we would pay', hi: 'जिस व्यक्ति या दुकान/संस्था को भुगतान करना है, उसका नाम' } },
@@ -182,7 +182,7 @@
           label: { en: 'Proof you paid (UPI screenshot or receipt)', hi: 'आपके भुगतान का सबूत (UPI स्क्रीनशॉट या रसीद)' } },
         { name: 'f_video', type: 'files', kind: 'animal_video', media: 'video', max: 1, label: { en: 'A short video (up to 20 MB)', hi: 'एक छोटा वीडियो (20 MB तक)' } },
         { name: 'f_other', type: 'files', kind: 'other_doc', media: 'doc', max: 3, label: { en: 'Anything else that helps', hi: 'कुछ और जो मदद करे' } },
-        { name: 'laterNote', type: 'note', html: { en: "Don't have a document yet? You can still submit — you'll be able to add it later with your Case ID.", hi: 'अभी कोई दस्तावेज़ नहीं है? फिर भी आप जमा कर सकते हैं — बाद में अपने केस ID से जोड़ पाएँगे।' } },
+        { name: 'laterNote', type: 'note', html: { en: "Don't have a document yet? You can still submit. You'll be able to add it later with your Case ID.", hi: 'अभी कोई दस्तावेज़ नहीं है? फिर भी आप जमा कर सकते हैं। बाद में अपने केस ID से जोड़ पाएँगे।' } },
       ],
     },
   ];
@@ -190,7 +190,7 @@
   KK.CONSENT_FIELDS = [
     { name: 'consentData', type: 'checkbox', required: true, label: { en: 'I agree that Koki & Khabib Animal Aid may store these details privately and contact me about this request.', hi: 'मैं सहमत हूँ कि Koki & Khabib Animal Aid ये जानकारी निजी रूप से रख सकता है और इस अनुरोध के बारे में मुझसे संपर्क कर सकता है।' },
       help: { en: 'See our privacy page. We never share your details.', hi: 'हमारा प्राइवेसी पेज देखें। हम आपकी जानकारी कभी साझा नहीं करते।' } },
-    { name: 'declaration', type: 'checkbox', required: true, label: { en: 'The information is true. I understand help is discretionary — not guaranteed — and depends on checks and the money available.', hi: 'यह जानकारी सच है। मैं समझता/समझती हूँ कि मदद विवेक पर निर्भर है — गारंटी नहीं है — और जाँच व उपलब्ध राशि पर निर्भर करती है।' } },
+    { name: 'declaration', type: 'checkbox', required: true, label: { en: 'The information is true. I understand help is discretionary, not guaranteed, and depends on checks and the money available.', hi: 'यह जानकारी सच है। मैं समझता/समझती हूँ कि मदद विवेक पर निर्भर है, गारंटी नहीं है, और जाँच व उपलब्ध राशि पर निर्भर करती है।' } },
     { name: 'consentShare', type: 'checkbox', label: { en: "You may share this animal's story on Instagram without my name or contact details.", hi: 'आप इस जानवर की कहानी Instagram पर मेरे नाम या संपर्क के बिना साझा कर सकते हैं।' } },
   ];
 
@@ -230,14 +230,14 @@
   KK.successHtml = function (caseId, missing, failed, emergency) {
     var miss = (missing || []).filter(function (m) { return DOC[m]; });
     return '<div class="done-box"><div style="font-size:44px" aria-hidden="true">🐾</div><h2>' + KK.bi({ en: 'Request received', hi: 'अनुरोध मिल गया' }) + '</h2>' +
-      '<p>' + KK.bi({ en: 'Your Case ID — please take a screenshot:', hi: 'आपका केस ID — कृपया स्क्रीनशॉट ले लें:' }) + '</p><div class="case-id">' + KK.esc(caseId) + '</div></div>' +
+      '<p>' + KK.bi({ en: 'Your Case ID (please take a screenshot):', hi: 'आपका केस ID (कृपया स्क्रीनशॉट ले लें):' }) + '</p><div class="case-id">' + KK.esc(caseId) + '</div></div>' +
       (failed ? '<div class="notice red"><p>' + KK.bi({ en: failed + ' file(s) did not upload. You can add them on the follow-up page.', hi: failed + ' फ़ाइल अपलोड नहीं हुई। आप उन्हें फ़ॉलो-अप पेज पर जोड़ सकते हैं।' }) + '</p></div>' : '') +
       '<div class="card" style="margin:14px 0"><h3>' + KK.bi({ en: 'What happens next', hi: 'आगे क्या होगा' }) + '</h3><ol class="list-plain">' +
       (emergency
         ? '<li>' + KK.bi({ en: 'Emergency requests reach us immediately. During waking hours we aim to respond within a few hours.', hi: 'आपातकालीन अनुरोध हमें तुरंत मिलते हैं। दिन के समय हम कुछ घंटों में जवाब देने की कोशिश करते हैं।' }) + '</li>' +
           '<li>' + KK.bi({ en: 'We will call the clinic and, if we can help, pay the clinic directly.', hi: 'हम क्लिनिक को फ़ोन करेंगे और अगर मदद कर सके, तो सीधे क्लिनिक को भुगतान करेंगे।' }) + '</li>'
         : '<li>' + KK.bi({ en: 'We review requests every evening.', hi: 'हम हर शाम अनुरोधों की समीक्षा करते हैं।' }) + '</li>' +
-          '<li>' + KK.bi({ en: 'If we need anything, we will WhatsApp you. We may also call the clinic — this is routine.', hi: 'अगर हमें कुछ चाहिए होगा, तो हम आपको WhatsApp करेंगे। हम क्लिनिक को फ़ोन भी कर सकते हैं — यह सामान्य है।' }) + '</li>') +
+          '<li>' + KK.bi({ en: 'If we need anything, we will WhatsApp you. We may also call the clinic. This is routine.', hi: 'अगर हमें कुछ चाहिए होगा, तो हम आपको WhatsApp करेंगे। हम क्लिनिक को फ़ोन भी कर सकते हैं। यह सामान्य है।' }) + '</li>') +
       '<li>' + KK.bi({ en: 'If approved, we pay the vet, pharmacy or supplier directly and send you the reference.', hi: 'मंज़ूरी मिलने पर हम सीधे डॉक्टर, फ़ार्मेसी या सप्लायर को भुगतान करेंगे और आपको रेफ़रेंस भेजेंगे।' }) + '</li></ol></div>' +
       (miss.length ? '<div class="notice"><p><b>' + KK.bi({ en: 'To decide, we will also need:', hi: 'फ़ैसले के लिए हमें यह भी चाहिए:' }) + '</b></p><ul class="list-plain">' +
         miss.map(function (m) { return '<li>' + KK.bi(DOC[m]) + '</li>'; }).join('') + '</ul><p><a class="btn btn-primary" href="followup.html?case=' + encodeURIComponent(caseId) + '">' +
@@ -262,8 +262,7 @@
       if (!r || !r.ok) {
         var code = (r && r.error) || 'server_error';
         if (code === 'invalid') return ui.fail(KK.errorText('invalid') + ' ' + (r.fields || []).map(KK.fieldLabel).join(', '), true);
-        if (code === 'paused') return ui.fail(KK.errorText('paused') + (r.reopen ? ' ' + KK.t({ en: 'Reopening ', hi: 'फिर खुलेगा: ' }) + KK.niceDate(r.reopen, KK.lang()) + '.' : '') + ' ' +
-          KK.t({ en: 'For emergencies, see the emergency page.', hi: 'आपातकाल के लिए आपातकालीन पेज देखें।' }), false);
+        if (code === 'paused') return ui.fail(KK.errorText('paused') + (r.reopen ? ' ' + KK.t({ en: 'Reopening ', hi: 'फिर खुलेगा: ' }) + KK.niceDate(r.reopen, KK.lang()) + '.' : ''), false);
         return ui.fail(KK.errorText(code), code === 'too_fast');
       }
       var pending = { caseId: r.caseId, token: r.token, uploaded: [], at: Date.now(), lane: lane };

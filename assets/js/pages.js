@@ -1,4 +1,4 @@
-/* Koki & Khabib Animal Aid — emergency, track, follow-up and partner pages. */
+/* Koki & Khabib Animal Aid: track, follow-up and partner pages (plus the emergency form, currently switched off). */
 (function () {
   'use strict';
   var KK = window.KK;
@@ -10,7 +10,7 @@
     if (!el) return;
     var steps = [{
       key: 'em', title: { en: 'Emergency fast-track', hi: 'आपातकालीन जल्दी मदद' },
-      intro: { en: 'For animals already at (or on the way to) a vet. We call the clinic and can pay them directly — up to ₹2,000 before documents.', hi: 'उन जानवरों के लिए जो डॉक्टर के पास हैं (या ले जाए जा रहे हैं)। हम क्लिनिक को फ़ोन करके सीधे उन्हें भुगतान कर सकते हैं — दस्तावेज़ों से पहले ₹2,000 तक।' },
+      intro: { en: 'For animals already at (or on the way to) a vet. We call the clinic and can pay them directly, up to ₹2,000 before documents.', hi: 'उन जानवरों के लिए जो डॉक्टर के पास हैं (या ले जाए जा रहे हैं)। हम क्लिनिक को फ़ोन करके सीधे उन्हें भुगतान कर सकते हैं, दस्तावेज़ों से पहले ₹2,000 तक।' },
       fields: [
         { name: 'name', type: 'text', required: true, maxlength: 80, autocomplete: 'name', label: { en: 'Your name', hi: 'आपका नाम' } },
         { name: 'phone', type: 'tel', required: true, prefix: '+91', maxlength: 15, autocomplete: 'tel-national', label: { en: 'Your mobile number', hi: 'आपका मोबाइल नंबर' } },
@@ -63,14 +63,14 @@
 
   /* ---------- status meanings ---------- */
   var STATUS = {
-    received: { tone: '', t: { en: 'Received — under review', hi: 'मिल गया — समीक्षा जारी है' }, d: { en: 'We review requests every evening. We will WhatsApp you if we need anything.', hi: 'हम हर शाम अनुरोधों की समीक्षा करते हैं। कुछ चाहिए होगा तो हम WhatsApp करेंगे।' } },
+    received: { tone: '', t: { en: 'Received, under review', hi: 'मिल गया, समीक्षा जारी है' }, d: { en: 'We review requests every evening. We will WhatsApp you if we need anything.', hi: 'हम हर शाम अनुरोधों की समीक्षा करते हैं। कुछ चाहिए होगा तो हम WhatsApp करेंगे।' } },
     info_needed: { tone: 'warn', t: { en: 'We need a little more information', hi: 'हमें थोड़ी और जानकारी चाहिए' }, d: { en: 'Please add the items below. If we do not hear back within 7 days, the request closes (you can reopen it).', hi: 'कृपया नीचे दी गई चीज़ें जोड़ें। 7 दिन में जवाब न मिलने पर अनुरोध बंद हो जाएगा (आप इसे फिर खोल सकते हैं)।' } },
     verifying: { tone: 'warn', t: { en: 'Being verified', hi: 'जाँच चल रही है' }, d: { en: 'We are checking a few details and may call the clinic. This is routine.', hi: 'हम कुछ जानकारी जाँच रहे हैं और क्लिनिक को फ़ोन कर सकते हैं। यह सामान्य है।' } },
-    approved: { tone: '', t: { en: 'Approved — payment being arranged', hi: 'मंज़ूर — भुगतान की व्यवस्था हो रही है' }, d: { en: 'We pay the clinic, pharmacy or supplier directly and will send you the reference.', hi: 'हम सीधे क्लिनिक, फ़ार्मेसी या सप्लायर को भुगतान करते हैं और आपको रेफ़रेंस भेजेंगे।' } },
+    approved: { tone: '', t: { en: 'Approved: payment being arranged', hi: 'मंज़ूर: भुगतान की व्यवस्था हो रही है' }, d: { en: 'We pay the clinic, pharmacy or supplier directly and will send you the reference.', hi: 'हम सीधे क्लिनिक, फ़ार्मेसी या सप्लायर को भुगतान करते हैं और आपको रेफ़रेंस भेजेंगे।' } },
     paid: { tone: '', t: { en: 'Paid', hi: 'भुगतान हो गया' }, d: { en: 'Thank you for helping this animal.', hi: 'इस जानवर की मदद के लिए धन्यवाद।' } },
-    followup_due: { tone: 'warn', t: { en: 'Paid — please share the bill and an update', hi: 'भुगतान हो गया — कृपया बिल और अपडेट भेजें' }, d: { en: 'Upload the final bill and a recent photo of the animal.', hi: 'अंतिम बिल और जानवर की हाल की फ़ोटो अपलोड करें।' } },
+    followup_due: { tone: 'warn', t: { en: 'Paid: please share the bill and an update', hi: 'भुगतान हो गया: कृपया बिल और अपडेट भेजें' }, d: { en: 'Upload the final bill and a recent photo of the animal.', hi: 'अंतिम बिल और जानवर की हाल की फ़ोटो अपलोड करें।' } },
     closed: { tone: '', t: { en: 'Closed', hi: 'बंद' }, d: { en: 'This request is complete. Thank you.', hi: 'यह अनुरोध पूरा हो गया है। धन्यवाद।' } },
-    not_funded: { tone: 'bad', t: { en: "We weren't able to support this request", hi: 'हम इस अनुरोध में मदद नहीं कर पाए' }, d: { en: "This isn't a judgement on you or the animal — we are a very small initiative with strict limits. You can apply again for a new need or next month.", hi: 'यह आप पर या जानवर पर कोई टिप्पणी नहीं है — हम सख़्त सीमाओं वाली एक बहुत छोटी पहल हैं। आप किसी नई ज़रूरत के लिए या अगले महीने फिर आवेदन कर सकते हैं।' } },
+    not_funded: { tone: 'bad', t: { en: "We weren't able to support this request", hi: 'हम इस अनुरोध में मदद नहीं कर पाए' }, d: { en: "This isn't a judgement on you or the animal. We are a very small initiative with strict limits. You can apply again for a new need or next month.", hi: 'यह आप पर या जानवर पर कोई टिप्पणी नहीं है। हम सख़्त सीमाओं वाली एक बहुत छोटी पहल हैं। आप किसी नई ज़रूरत के लिए या अगले महीने फिर आवेदन कर सकते हैं।' } },
     withdrawn: { tone: 'bad', t: { en: 'Withdrawn', hi: 'वापस लिया गया' }, d: { en: 'This request was withdrawn.', hi: 'यह अनुरोध वापस ले लिया गया।' } },
   };
   KK.statusHtml = function (caseId, s) {
@@ -144,7 +144,7 @@
           }).then(function (failed) {
             return KK.api('followup_finalize', { caseId: caseId, token: r.token, note: data.note || '' }, { retries: 2 }).then(function (fin) {
               if (!fin.ok) return ui.fail(KK.errorText(fin.error), false);
-              ui.done('<div class="done-box"><div style="font-size:44px" aria-hidden="true">🐾</div><h2>' + bi({ en: 'Thank you — received', hi: 'धन्यवाद — मिल गया' }) + '</h2>' +
+              ui.done('<div class="done-box"><div style="font-size:44px" aria-hidden="true">🐾</div><h2>' + bi({ en: 'Thank you, received', hi: 'धन्यवाद, मिल गया' }) + '</h2>' +
                 (failed ? '<p class="notice red">' + bi({ en: failed + ' file(s) failed. Please try again.', hi: failed + ' फ़ाइल अपलोड नहीं हुईं। कृपया फिर कोशिश करें।' }) + '</p>' : '') + '</div>' + KK.statusHtml(caseId, fin.status).replace(/<a class="btn btn-primary"[^>]*>[\s\S]*?<\/a>/, ''));
             });
           });

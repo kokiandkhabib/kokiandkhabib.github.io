@@ -1,4 +1,4 @@
-/* Koki & Khabib Animal Aid — small bilingual multi-step form engine with drafts, uploads and review. */
+/* Koki & Khabib Animal Aid: small bilingual multi-step form engine with drafts, uploads and review. */
 (function () {
   'use strict';
   var KK = (window.KK = window.KK || {});
@@ -23,7 +23,7 @@
     restored: { en: 'We restored the answers saved on this phone.', hi: 'इस फ़ोन पर सहेजे गए आपके जवाब वापस आ गए हैं।' },
     startOver: { en: 'Start over', hi: 'फिर से शुरू करें' },
     takePhoto: { en: '📷 Take photo', hi: '📷 फ़ोटो लें' }, choose: { en: '📎 Choose files', hi: '📎 फ़ाइल चुनें' },
-    preparing: { en: 'Preparing…', hi: 'तैयार हो रहा है…' }, files: { en: 'file(s)', hi: 'फ़ाइल' }, none: { en: '—', hi: '—' },
+    preparing: { en: 'Preparing…', hi: 'तैयार हो रहा है…' }, files: { en: 'file(s)', hi: 'फ़ाइल' }, none: { en: 'Not given', hi: 'नहीं दिया' },
     fix: { en: 'Please fix the highlighted answers.', hi: 'कृपया लाल रंग वाले जवाब ठीक करें।' },
     yes: { en: 'Yes', hi: 'हाँ' }, no: { en: 'No', hi: 'नहीं' },
   };
