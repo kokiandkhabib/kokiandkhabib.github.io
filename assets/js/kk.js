@@ -113,8 +113,8 @@
     if (mb && mn) mb.addEventListener('click', function () { var open = mn.classList.toggle('open'); mb.setAttribute('aria-expanded', open ? 'true' : 'false'); });
     var here = location.pathname.split('/').pop() || 'index.html';
     document.querySelectorAll('.nav a, .mobile-nav a').forEach(function (a) { if (a.getAttribute('href') === here) a.setAttribute('aria-current', 'page'); });
-    document.querySelectorAll('[data-ig]').forEach(function (a) { a.href = 'https://instagram.com/' + (CFG.instagram || 'kokiandkhabib'); });
-    document.querySelectorAll('[data-ig-text]').forEach(function (s) { s.textContent = '@' + (CFG.instagram || 'kokiandkhabib'); });
+    document.querySelectorAll('[data-ig]').forEach(function (a) { a.href = 'https://instagram.com/' + (CFG.instagram || 'koki_changwani'); });
+    document.querySelectorAll('[data-ig-text]').forEach(function (s) { s.textContent = '@' + (CFG.instagram || 'koki_changwani'); });
     document.querySelectorAll('[data-year]').forEach(function (s) { s.textContent = new Date().getFullYear(); });
     if (document.querySelector('[data-status]')) KK.paintStatus();
     if (KK.testKey) {
